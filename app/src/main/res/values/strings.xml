@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">Atraccis</string>
+    <string name="string_log_in">Log In</string>
+    <string name="string_email">Enter Email</string>
+    <string name="string_company">Select Company</string>
+    <string name="string_password">Enter Passowrd</string>
+    <string name="srirng_incharge">I am <u>incharge</u> Of Company.</string>
+</resources>
