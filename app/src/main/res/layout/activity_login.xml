@@ -80,7 +80,6 @@
             app:layout_constraintStart_toStartOf="@+id/startGuideline"
             app:layout_constraintTop_toBottomOf="@+id/txtuseremail" />
 
-
         <EditText
             android:id="@+id/txtselect_company"
             android:layout_width="0dp"
@@ -88,84 +87,115 @@
             android:padding="@dimen/_15sdp"
             android:maxLines="1"
             android:layout_marginTop="5dp"
+            android:enabled="false"
             android:background="@drawable/border_shadow"
             android:textColor="@color/primery"
             android:textSize="@dimen/_20sdp"
             app:layout_constraintEnd_toStartOf="@+id/endGuideline"
             app:layout_constraintStart_toStartOf="@+id/startGuideline"
             app:layout_constraintTop_toBottomOf="@+id/textView3" />
+        <ImageView
+            android:id="@+id/view_show_companies"
+            android:layout_width="30dp"
+            android:layout_height="40dp"
+            android:layout_marginEnd="10dp"
+            android:src="@drawable/ic_baseline_keyboard_arrow_down_24"
+            app:layout_constraintBottom_toBottomOf="@+id/txtselect_company"
+            app:layout_constraintEnd_toStartOf="@+id/endGuideline"
+            app:layout_constraintTop_toTopOf="@+id/txtselect_company"
+            app:tint="@color/primery" />
 
-        <TextView
-            android:id="@+id/textView4"
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/constraintLayout"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_marginStart="20dp"
             android:layout_marginTop="10dp"
-            android:text="@string/string_password"
-            android:textColor="@color/primery"
-            android:textSize="@dimen/_20sdp"
-            app:layout_constraintEnd_toStartOf="@+id/endGuideline"
-            app:layout_constraintHorizontal_bias="1.0"
-            app:layout_constraintStart_toStartOf="@+id/startGuideline"
-            app:layout_constraintTop_toBottomOf="@+id/txtselect_company" />
-
-
-        <EditText
-            android:id="@+id/txt_user_password"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:paddingStart="@dimen/_15sdp"
-            android:paddingVertical="@dimen/_15sdp"
-            android:paddingEnd="@dimen/_40sdp"
-            android:layout_marginTop="5dp"
-            android:maxLines="1"
-            android:background="@drawable/border_shadow"
-            android:inputType="textPassword"
-            android:textSize="@dimen/_20sdp"
-            android:textColor="@color/primery"
-            app:layout_constraintEnd_toStartOf="@+id/endGuideline"
-            app:layout_constraintStart_toStartOf="@+id/startGuideline"
-            app:layout_constraintTop_toBottomOf="@+id/textView4" />
-
-        <ImageView
-            android:id="@+id/view_hide_password"
-            android:layout_width="30dp"
-            android:layout_height="40dp"
-            android:layout_marginEnd="10dp"
             android:visibility="gone"
-            android:src="@drawable/close_eye_icon"
-            app:layout_constraintBottom_toBottomOf="@+id/txt_user_password"
             app:layout_constraintEnd_toStartOf="@+id/endGuideline"
-            app:layout_constraintTop_toTopOf="@+id/txt_user_password"
-            app:tint="@color/primery" />
+            app:layout_constraintStart_toStartOf="@+id/startGuideline"
+            app:layout_constraintTop_toBottomOf="@+id/txtselect_company">
 
-        <ImageView
-            android:id="@+id/view_show_password"
-            android:layout_width="30dp"
-            android:layout_height="40dp"
-            android:layout_marginEnd="10dp"
-            android:src="@drawable/open_eye"
-            app:layout_constraintBottom_toBottomOf="@+id/txt_user_password"
-            app:layout_constraintEnd_toStartOf="@+id/endGuideline"
-            app:layout_constraintTop_toTopOf="@+id/txt_user_password"
-            app:tint="@color/primery" />
+            <TextView
+                android:id="@+id/textView4"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="20dp"
+                android:text="@string/string_password"
+                android:textColor="@color/primery"
+                android:textSize="@dimen/_20sdp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="1.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+
+            <EditText
+                android:id="@+id/txt_user_password"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:background="@drawable/border_shadow"
+                android:inputType="textPassword"
+                android:maxLines="1"
+                android:paddingVertical="@dimen/_15sdp"
+                android:paddingStart="@dimen/_15sdp"
+                android:paddingEnd="@dimen/_40sdp"
+                android:textColor="@color/primery"
+                android:textSize="@dimen/_20sdp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/textView4" />
+
+            <ImageView
+                android:id="@+id/view_hide_password"
+                android:layout_width="30dp"
+                android:layout_height="40dp"
+                android:layout_marginEnd="10dp"
+                android:src="@drawable/close_eye_icon"
+                android:visibility="gone"
+                app:layout_constraintBottom_toBottomOf="@+id/txt_user_password"
+                app:layout_constraintEnd_toEndOf="@+id/view_show_password"
+                app:layout_constraintTop_toTopOf="@+id/txt_user_password"
+                app:tint="@color/primery" />
+
+            <ImageView
+                android:id="@+id/view_show_password"
+                android:layout_width="30dp"
+                android:layout_height="40dp"
+                android:layout_marginEnd="10dp"
+                android:src="@drawable/open_eye"
+                app:layout_constraintBottom_toBottomOf="@+id/txt_user_password"
+                app:layout_constraintEnd_toEndOf="@+id/txt_user_password"
+                app:layout_constraintTop_toTopOf="@+id/txt_user_password"
+                app:tint="@color/primery" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <CheckBox
+            android:id="@+id/checkBox"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:text="@string/srirng_incharge"
+            android:textColor="@color/primery"
+            app:layout_constraintStart_toStartOf="@+id/startGuideline"
+            app:layout_constraintTop_toBottomOf="@+id/constraintLayout" />
 
         <TextView
             android:id="@+id/btnlogin"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_marginTop="50dp"
-            android:padding="@dimen/_15sdp"
+            android:layout_marginTop="20dp"
             android:background="@drawable/border_shadow"
             android:backgroundTint="@color/primery"
+            android:padding="@dimen/_15sdp"
             android:text="@string/string_log_in"
             android:textAlignment="center"
-            android:textSize="@dimen/_20sdp"
             android:textColor="@android:color/white"
+            android:textSize="@dimen/_20sdp"
             android:textStyle="bold"
             app:layout_constraintEnd_toStartOf="@+id/endGuideline"
             app:layout_constraintStart_toStartOf="@+id/startGuideline"
-            app:layout_constraintTop_toBottomOf="@+id/txt_user_password" />
+            app:layout_constraintTop_toBottomOf="@+id/checkBox" />
 
 
 

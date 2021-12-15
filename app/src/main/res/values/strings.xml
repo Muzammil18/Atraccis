@@ -1,8 +1,11 @@
 <resources>
     <string name="app_name">Atraccis</string>
-    <string name="string_log_in">Log In</string>
-    <string name="string_email">Enter Email</string>
-    <string name="string_company">Select Company</string>
-    <string name="string_password">Enter Passowrd</string>
-    <string name="srirng_incharge">I am <u>incharge</u> Of Company.</string>
+    <string name="string_log_in" translatable="false">Log In</string>
+    <string name="string_email" translatable="false">Enter Email</string>
+    <string name="string_company" translatable="false">Select Company</string>
+    <string name="string_password" translatable="false">Enter Passowrd</string>
+    <string name="srirng_incharge" translatable="false">I am <u>Incharge</u> of company.</string>
+    <string name="string_video" translatable="false">Video</string>
+    <string name="string_song" translatable="false">Song</string>
+    <string name="string_hypnosis" translatable="false">Hypnosis</string>
 </resources>

@@ -1,4 +1,4 @@
-package com.example.atraccis.views.activities;
+package com.example.atraccis.activities;
 
 import android.content.Intent;
 import android.os.Build;
