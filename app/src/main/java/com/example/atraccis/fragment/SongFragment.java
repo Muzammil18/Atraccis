@@ -1,6 +1,8 @@
 package com.example.atraccis.fragment;
 
+import android.net.Uri;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -11,11 +13,33 @@ import androidx.fragment.app.Fragment;
 
 import com.example.atraccis.R;
 import com.example.atraccis.databinding.FragmentSongBinding;
+import com.google.android.exoplayer2.ExoPlayerFactory;
+import com.google.android.exoplayer2.SimpleExoPlayer;
+import com.google.android.exoplayer2.extractor.DefaultExtractorsFactory;
+import com.google.android.exoplayer2.extractor.ExtractorsFactory;
+import com.google.android.exoplayer2.source.ExtractorMediaSource;
+import com.google.android.exoplayer2.source.MediaSource;
+import com.google.android.exoplayer2.trackselection.AdaptiveTrackSelection;
+import com.google.android.exoplayer2.trackselection.DefaultTrackSelector;
+import com.google.android.exoplayer2.trackselection.TrackSelector;
+import com.google.android.exoplayer2.upstream.BandwidthMeter;
+import com.google.android.exoplayer2.upstream.DefaultBandwidthMeter;
+import com.google.android.exoplayer2.upstream.DefaultHttpDataSourceFactory;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
 
 
 public class SongFragment extends Fragment {
     public FragmentSongBinding binding;
     private View mView;
+    FirebaseDatabase firebaseDatabase;
+
+    // creating a variable for our Database
+    // Reference for Firebase.
+    DatabaseReference databaseReference;
+
+    // creating a variable for exoplayer
+    SimpleExoPlayer exoPlayer;
     public void onCreate( Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         //onBackPressed();
@@ -42,21 +66,53 @@ public class SongFragment extends Fragment {
 
 
     private final void init() {
-        String url="https://drive.google.com/file/d/14hpoRnFK1mv2OV0jxCWYMd84PkXI0ZKK/view?usp=drivesdk";
-        binding.webview.setWebViewClient(new MyBrowser());
-        binding.webview.getSettings().setLoadsImagesAutomatically(true);
-        binding.webview.getSettings().setJavaScriptEnabled(true);
-        binding.webview.setScrollBarStyle(View.SCROLLBARS_INSIDE_OVERLAY);
-        binding.webview.loadUrl(url);
+        firebaseDatabase = FirebaseDatabase.getInstance();
+
+        // below line is used to get reference for our database.
+        databaseReference = firebaseDatabase.getReference("url");
+        initializeExoplayerView("https://firebasestorage.googleapis.com/v0/b/atraccis-d69de.appspot.com/o/songs%2Fsong1.mp4?alt=media&token=57a6038f-d50f-4d0c-b7a2-a38c29e926dc");
     }
 
-    private class MyBrowser extends WebViewClient {
-        @Override
-        public boolean shouldOverrideUrlLoading(WebView view, String url) {
-            view.loadUrl(url);
-            return true;
+    private void initializeExoplayerView(String videoURL) {
+        try {
+            // bandwidthmeter is used for getting default bandwidth
+            BandwidthMeter bandwidthMeter = new DefaultBandwidthMeter();
+            // track selector is used to navigate between video using a default seeker.
+            TrackSelector trackSelector = new DefaultTrackSelector(new AdaptiveTrackSelection.Factory(bandwidthMeter));
+
+            // we are adding our track selector to exoplayer.
+            exoPlayer = ExoPlayerFactory.newSimpleInstance(getContext(), trackSelector);
+
+            // we are parsing a video url and
+            // parsing its video uri.
+            Uri videouri = Uri.parse(videoURL);
+
+            // we are creating a variable for data source
+            // factory and setting its user agent as 'exoplayer_view'
+            DefaultHttpDataSourceFactory dataSourceFactory = new DefaultHttpDataSourceFactory("exoplayer_video");
+
+            // we are creating a variable for extractor
+            // factory and setting it to default extractor factory.
+            ExtractorsFactory extractorsFactory = new DefaultExtractorsFactory();
+
+            // we are creating a media source with above variables
+            // and passing our event handler as null,
+            MediaSource mediaSource = new ExtractorMediaSource(videouri, dataSourceFactory, extractorsFactory, null, null);
+
+            // inside our exoplayer view
+            // we are setting our player
+            binding.idExoPlayerView.setPlayer(exoPlayer);
+
+            // we are preparing our exoplayer
+            // with media source.
+            exoPlayer.prepare(mediaSource);
+
+            // we are setting our exoplayer
+            // when it is ready.
+            exoPlayer.setPlayWhenReady(true);
+        } catch (Exception e) {
+            // below line is used for handling our errors.
+            Log.e("TAG", "Error : " + e.toString());
         }
     }
-
 }
-
