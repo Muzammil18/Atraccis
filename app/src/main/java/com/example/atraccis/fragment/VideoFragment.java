@@ -1,5 +1,7 @@
 package com.example.atraccis.fragment;
 
+import android.content.Context;
+import android.content.SharedPreferences;
 import android.net.Uri;
 import android.os.Bundle;
 import android.util.Log;
@@ -8,11 +10,13 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.webkit.WebView;
 import android.webkit.WebViewClient;
+import android.widget.Toast;
 
 import androidx.fragment.app.Fragment;
 
 import com.example.atraccis.R;
 import com.example.atraccis.databinding.FragmentVideoBinding;
+import com.example.atraccis.helpers.Links;
 import com.google.android.exoplayer2.ExoPlayerFactory;
 import com.google.android.exoplayer2.SimpleExoPlayer;
 import com.google.android.exoplayer2.extractor.DefaultExtractorsFactory;
@@ -28,11 +32,17 @@ import com.google.android.exoplayer2.upstream.DefaultHttpDataSourceFactory;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
+import java.text.SimpleDateFormat;
+import java.util.Date;
+import java.util.HashMap;
+
 
 public class VideoFragment extends Fragment {
     public FragmentVideoBinding binding;
     private View mView;
     FirebaseDatabase firebaseDatabase;
+    SharedPreferences sharedpreferences;
+    Links links;
 
     // creating a variable for our Database
     // Reference for Firebase.
@@ -62,16 +72,24 @@ public class VideoFragment extends Fragment {
 
     public void onViewCreated( View view,  Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
+        sharedpreferences = requireContext().getSharedPreferences(getString(R.string.app_name), Context.MODE_PRIVATE);
         this.init();
     }
 
     private final void init() {
+        links=new Links();
+//        Toast.makeText(requireContext(), sharedpreferences.getInt("counter",0)+"thr", Toast.LENGTH_SHORT).show();
         firebaseDatabase = FirebaseDatabase.getInstance();
+        if(sharedpreferences.getBoolean("insertvideo",false)){
+            insertVideo();
+            SharedPreferences.Editor editor = sharedpreferences.edit();
+            editor.putBoolean("insertvideo",false);
+            editor.commit();
 
+        }
         // below line is used to get reference for our database.
         databaseReference = firebaseDatabase.getReference("url");
-        initializeExoplayerView("https://firebasestorage.googleapis.com/v0/b/atraccis-d69de.appspot.com/o/videos%2Fvideo1.mp4?alt=media&token=8ff9b533-cd49-4d38-aba8-fe9a95419672");
-    }
+        initializeExoplayerView(links.getvideo(sharedpreferences.getInt("counter",0)));  }
 
     private void initializeExoplayerView(String videoURL) {
         try {
@@ -116,5 +134,14 @@ public class VideoFragment extends Fragment {
         }
     }
 
+    void insertVideo(){
+        SimpleDateFormat sdf = new SimpleDateFormat("yyyy.MM.dd G 'at' HH:mm:ss z");
+        HashMap<String, Object> map = new HashMap<>();
+        map.put("email",sharedpreferences.getString("email",""));
+        map.put("playVideo","Played");
+        map.put("date",sdf.format(new Date()));
+        FirebaseDatabase.getInstance().getReference().child("Videos_Data").push()
+                .setValue(map);
+    }
 }
 

@@ -1,0 +1,629 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView  xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_height="wrap_content"
+    android:layout_width="match_parent">
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:padding="20dp"
+        >
+
+        <TextView
+            android:id="@+id/textView2"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="Initial Test"
+            android:textAlignment="center"
+            android:textColor="@color/black"
+            android:textSize="25dp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/constraintLayout"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textView2">
+
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/centerGuideline"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                app:layout_constraintGuide_percent="0.5" />
+
+            <TextView
+                android:id="@+id/question1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:text="Toma medicación?"
+                android:textColor="@color/black"
+                android:textSize="20sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <CheckBox
+                android:id="@+id/question1checkBox1"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="Sí"
+                android:textSize="15sp"
+                app:layout_constraintEnd_toStartOf="@+id/centerGuideline"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/question1" />
+
+            <CheckBox
+                android:id="@+id/question1checkBox2"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="No"
+                android:textSize="15sp"
+                app:layout_constraintBottom_toBottomOf="@+id/question1checkBox1"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="@+id/centerGuideline"
+                app:layout_constraintTop_toTopOf="@+id/question1checkBox1" />
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/constraintLayout2"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/constraintLayout">
+
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/centerGuideline2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                app:layout_constraintGuide_percent="0.5" />
+
+            <TextView
+                android:id="@+id/question2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:text="Tiene alguna de las siguientes adicciones?"
+                android:textColor="@color/black"
+                android:textSize="20sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <CheckBox
+                android:id="@+id/question2checkBox1"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="Alcoholismo"
+                android:textSize="15sp"
+                app:layout_constraintEnd_toStartOf="@+id/centerGuideline2"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/question2" />
+
+            <CheckBox
+                android:id="@+id/question2checkBox2"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="Fumar"
+                android:textSize="15sp"
+                app:layout_constraintBottom_toBottomOf="@+id/question2checkBox1"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="@+id/centerGuideline2"
+                app:layout_constraintTop_toTopOf="@+id/question2checkBox1" />
+
+            <CheckBox
+                android:id="@+id/question2checkBox3"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="Drogas"
+                android:textSize="15sp"
+                app:layout_constraintEnd_toStartOf="@+id/centerGuideline2"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/question2checkBox1" />
+
+            <CheckBox
+                android:id="@+id/question2checkBox4"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="Apuestas"
+                android:textSize="15sp"
+                app:layout_constraintBottom_toBottomOf="@+id/question2checkBox3"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="@+id/centerGuideline2"
+                app:layout_constraintTop_toTopOf="@+id/question2checkBox3" />
+
+            <CheckBox
+                android:id="@+id/question2checkBox5"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="Conducta compulsiva"
+                android:textSize="15sp"
+                app:layout_constraintEnd_toStartOf="@+id/centerGuideline2"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/question2checkBox3" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:id="@+id/constraintLayout3"
+            android:orientation="vertical"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/constraintLayout2">
+
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/centerGuideline3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                app:layout_constraintGuide_percent="0.5" />
+
+            <TextView
+                android:id="@+id/question3"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:text="Tiene alguna situación a resolver de las siguientes?"
+                android:textColor="@color/black"
+                android:textSize="20sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <CheckBox
+                android:id="@+id/question3checkBox1"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="Laboral"
+                android:textSize="15sp"
+                app:layout_constraintEnd_toStartOf="@+id/centerGuideline3"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/question3" />
+
+            <CheckBox
+                android:id="@+id/question3checkBox2"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="Exámenes"
+                android:textSize="15sp"
+                app:layout_constraintBottom_toBottomOf="@+id/question3checkBox1"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="@+id/centerGuideline3"
+                app:layout_constraintTop_toTopOf="@+id/question3checkBox1" />
+
+            <CheckBox
+                android:id="@+id/question3checkBox3"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="Memoria"
+                android:textSize="15sp"
+                app:layout_constraintEnd_toStartOf="@+id/centerGuideline3"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/question3checkBox1" />
+
+            <CheckBox
+                android:id="@+id/question3checkBox4"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="Conducción"
+                android:textSize="15sp"
+                app:layout_constraintBottom_toBottomOf="@+id/question3checkBox3"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="@+id/centerGuideline3"
+                app:layout_constraintTop_toTopOf="@+id/question3checkBox3" />
+            <CheckBox
+                android:id="@+id/question3checkBox5"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="Mitomanía"
+                android:textSize="15sp"
+                app:layout_constraintEnd_toStartOf="@+id/centerGuideline3"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/question3checkBox3" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:id="@+id/constraintLayout4"
+            android:orientation="vertical"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/constraintLayout3">
+
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/centerGuideline4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                app:layout_constraintGuide_percent="0.5" />
+
+            <TextView
+                android:id="@+id/question4"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:text="Siente algunos de los siguientes estados?"
+                android:textColor="@color/black"
+                android:textSize="20sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <CheckBox
+                android:id="@+id/question4checkBox1"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="Ansiedad"
+                android:textSize="15sp"
+                app:layout_constraintEnd_toStartOf="@+id/centerGuideline4"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/question4" />
+
+            <CheckBox
+                android:id="@+id/question4checkBox2"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="Stress"
+                android:textSize="15sp"
+                app:layout_constraintBottom_toBottomOf="@+id/question4checkBox1"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="@+id/centerGuideline4"
+                app:layout_constraintTop_toTopOf="@+id/question4checkBox1" />
+
+            <CheckBox
+                android:id="@+id/question4checkBox3"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="Temores"
+                android:textSize="15sp"
+                app:layout_constraintEnd_toStartOf="@+id/centerGuideline4"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/question4checkBox1" />
+
+            <CheckBox
+                android:id="@+id/question4checkBox4"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="Fobias"
+                android:textSize="15sp"
+                app:layout_constraintBottom_toBottomOf="@+id/question4checkBox3"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="@+id/centerGuideline4"
+                app:layout_constraintTop_toTopOf="@+id/question4checkBox3" />
+            <CheckBox
+                android:id="@+id/question4checkBox5"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="Pánico"
+                android:textSize="15sp"
+                app:layout_constraintEnd_toStartOf="@+id/centerGuideline4"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/question4checkBox3" />
+            <CheckBox
+                android:id="@+id/question4checkBox6"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="Culpabilidad"
+                android:textSize="15sp"
+                app:layout_constraintBottom_toBottomOf="@+id/question4checkBox5"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="@+id/centerGuideline4"
+                app:layout_constraintTop_toTopOf="@+id/question4checkBox5" />
+            <CheckBox
+                android:id="@+id/question4checkBox7"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="Relajación"
+                android:textSize="15sp"
+                app:layout_constraintEnd_toStartOf="@+id/centerGuideline4"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/question4checkBox6" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:id="@+id/constraintLayout5"
+            android:orientation="vertical"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/constraintLayout4">
+
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/centerGuideline5"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                app:layout_constraintGuide_percent="0.5" />
+
+            <TextView
+                android:id="@+id/question5"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:text="Tiene algunas de las siguientes dificultades?"
+                android:textColor="@color/black"
+                android:textSize="20sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <CheckBox
+                android:id="@+id/question5checkBox1"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="Depresión"
+                android:textSize="15sp"
+                app:layout_constraintEnd_toStartOf="@+id/centerGuideline5"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/question5" />
+
+            <CheckBox
+                android:id="@+id/question5checkBox2"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="Confianza"
+                android:textSize="15sp"
+                app:layout_constraintBottom_toBottomOf="@+id/question5checkBox1"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="@+id/centerGuideline5"
+                app:layout_constraintTop_toTopOf="@+id/question5checkBox1" />
+
+            <CheckBox
+                android:id="@+id/question5checkBox3"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="Autoestima"
+                android:textSize="15sp"
+                app:layout_constraintEnd_toStartOf="@+id/centerGuideline5"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/question5checkBox1" />
+
+            <CheckBox
+                android:id="@+id/question5checkBox4"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="Motivación"
+                android:textSize="15sp"
+                app:layout_constraintBottom_toBottomOf="@+id/question5checkBox3"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="@+id/centerGuideline5"
+                app:layout_constraintTop_toTopOf="@+id/question5checkBox3" />
+            <CheckBox
+                android:id="@+id/question5checkBox5"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="Lograr metas"
+                android:textSize="15sp"
+                app:layout_constraintEnd_toStartOf="@+id/centerGuideline5"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/question5checkBox3" />
+            <CheckBox
+                android:id="@+id/question5checkBox6"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="Procrastinación"
+                android:textSize="15sp"
+                app:layout_constraintBottom_toBottomOf="@+id/question5checkBox5"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="@+id/centerGuideline5"
+                app:layout_constraintTop_toTopOf="@+id/question5checkBox5" />
+            <CheckBox
+                android:id="@+id/question5checkBox7"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="Descanso/Sueño"
+                android:textSize="15sp"
+                app:layout_constraintEnd_toStartOf="@+id/centerGuideline5"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/question5checkBox5" />
+            <CheckBox
+                android:id="@+id/question5checkBox8"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="Relaciones"
+                android:textSize="15sp"
+                app:layout_constraintBottom_toBottomOf="@+id/question5checkBox7"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="@+id/centerGuideline5"
+                app:layout_constraintTop_toTopOf="@+id/question5checkBox7" />
+            <CheckBox
+                android:id="@+id/question5checkBox9"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="Hablar en público"
+                android:textSize="15sp"
+                app:layout_constraintEnd_toStartOf="@+id/centerGuideline5"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/question5checkBox7" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:id="@+id/constraintLayout6"
+            android:orientation="vertical"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/constraintLayout5">
+
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/centerGuideline6"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                app:layout_constraintGuide_percent="0.5" />
+
+            <TextView
+                android:id="@+id/question6"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:text="Cuáles de estas emociones le gustaría sentir y conservar?"
+                android:textColor="@color/black"
+                android:textSize="20sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <CheckBox
+                android:id="@+id/question6checkBox1"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="Alegría"
+                android:textSize="15sp"
+                app:layout_constraintEnd_toStartOf="@+id/centerGuideline6"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/question6" />
+
+            <CheckBox
+                android:id="@+id/question6checkBox2"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="Gratitud"
+                android:textSize="15sp"
+                app:layout_constraintBottom_toBottomOf="@+id/question6checkBox1"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="@+id/centerGuideline6"
+                app:layout_constraintTop_toTopOf="@+id/question6checkBox1" />
+
+            <CheckBox
+                android:id="@+id/question6checkBox3"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="Serenidad"
+                android:textSize="15sp"
+                app:layout_constraintEnd_toStartOf="@+id/centerGuideline6"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/question6checkBox1" />
+
+            <CheckBox
+                android:id="@+id/question6checkBox4"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="Interés"
+                android:textSize="15sp"
+                app:layout_constraintBottom_toBottomOf="@+id/question6checkBox3"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="@+id/centerGuideline6"
+                app:layout_constraintTop_toTopOf="@+id/question6checkBox3" />
+            <CheckBox
+                android:id="@+id/question6checkBox5"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="Esperanza"
+                android:textSize="15sp"
+                app:layout_constraintEnd_toStartOf="@+id/centerGuideline6"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/question6checkBox3" />
+            <CheckBox
+                android:id="@+id/question6checkBox6"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="Inspiración"
+                android:textSize="15sp"
+                app:layout_constraintBottom_toBottomOf="@+id/question6checkBox5"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="@+id/centerGuideline6"
+                app:layout_constraintTop_toTopOf="@+id/question6checkBox5" />
+            <CheckBox
+                android:id="@+id/question6checkBox7"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="Amor"
+                android:textSize="15sp"
+                app:layout_constraintEnd_toStartOf="@+id/centerGuideline6"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/question6checkBox5" />
+            <CheckBox
+                android:id="@+id/question6checkBox8"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="Orgullo"
+                android:textSize="15sp"
+                app:layout_constraintBottom_toBottomOf="@+id/question6checkBox7"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="@+id/centerGuideline6"
+                app:layout_constraintTop_toTopOf="@+id/question6checkBox7" />
+            <CheckBox
+                android:id="@+id/question6checkBox9"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="Diversión"
+                android:textSize="15sp"
+                app:layout_constraintEnd_toStartOf="@+id/centerGuideline6"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/question6checkBox7" />
+            <CheckBox
+                android:id="@+id/question6checkBox10"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="Admiración"
+                android:textSize="15sp"
+                app:layout_constraintBottom_toBottomOf="@+id/question6checkBox9"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="@+id/centerGuideline6"
+                app:layout_constraintTop_toTopOf="@+id/question6checkBox9" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <TextView
+            android:id="@+id/question7"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:text="Su sinceridad nos hace mejorar ¿Quiere compartir su experiencia de ATRACCIS?"
+            android:textColor="@color/black"
+            android:textSize="20dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/constraintLayout6" />
+
+        <EditText
+            android:id="@+id/question7ans"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:padding="@dimen/_15sdp"
+            android:background="@drawable/border_shadow"
+            android:hint="Write Answer here..."
+            android:textSize="15dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/question7" />
+
+        <TextView
+            android:id="@+id/btnsubmit"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/border_shadow"
+            android:backgroundTint="@color/primery"
+            android:padding="@dimen/_15sdp"
+            android:text="@string/string_submit"
+            android:textAlignment="center"
+            android:textColor="@android:color/white"
+            android:textSize="@dimen/_20sdp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/question7ans" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</ScrollView>

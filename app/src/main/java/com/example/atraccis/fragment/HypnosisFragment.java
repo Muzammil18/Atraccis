@@ -1,5 +1,7 @@
 package com.example.atraccis.fragment;
 
+import android.content.Context;
+import android.content.SharedPreferences;
 import android.net.Uri;
 import android.os.Bundle;
 import android.util.Log;
@@ -27,10 +29,16 @@ import com.google.android.exoplayer2.upstream.DefaultHttpDataSourceFactory;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
+import java.text.SimpleDateFormat;
+import java.util.Date;
+import java.util.HashMap;
+
 public class HypnosisFragment extends Fragment {
     public FragmentHypnosisBinding binding;
     private View mView;
     FirebaseDatabase firebaseDatabase;
+    SharedPreferences sharedpreferences;
+
 
     // creating a variable for our Database
     // Reference for Firebase.
@@ -60,12 +68,19 @@ public class HypnosisFragment extends Fragment {
 
     public void onViewCreated( View view,  Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
+        sharedpreferences = requireContext().getSharedPreferences(getString(R.string.app_name), Context.MODE_PRIVATE);
         this.init();
     }
 
     private final void init() {
         firebaseDatabase = FirebaseDatabase.getInstance();
+        if(sharedpreferences.getBoolean("inserthyponosis",false)){
+            insertHyponsis();
+            SharedPreferences.Editor editor = sharedpreferences.edit();
+            editor.putBoolean("inserthyponosis",false);
+            editor.commit();
 
+        }
         // below line is used to get reference for our database.
         databaseReference = firebaseDatabase.getReference("url");
         initializeExoplayerView("https://firebasestorage.googleapis.com/v0/b/atraccis-d69de.appspot.com/o/hipnosis%2Fhipnosis.mp4?alt=media&token=f41e3f9f-e43e-41a9-ad59-3c0da39b5a97");
@@ -112,6 +127,15 @@ public class HypnosisFragment extends Fragment {
             // below line is used for handling our errors.
             Log.e("TAG", "Error : " + e.toString());
         }
+    }
+    void insertHyponsis(){
+        SimpleDateFormat sdf = new SimpleDateFormat("yyyy.MM.dd G 'at' HH:mm:ss z");
+        HashMap<String, Object> map = new HashMap<>();
+        map.put("email",sharedpreferences.getString("email",""));
+        map.put("playHyponsis","Played");
+        map.put("date",sdf.format(new Date()));
+        FirebaseDatabase.getInstance().getReference().child("Hyponsis_Data").push()
+                .setValue(map);
     }
 }
 

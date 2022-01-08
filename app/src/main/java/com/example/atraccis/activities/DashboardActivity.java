@@ -1,7 +1,10 @@
 package com.example.atraccis.activities;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.ImageView;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -14,6 +17,7 @@ import com.google.android.material.bottomnavigation.BottomNavigationView;
 public class DashboardActivity extends AppCompatActivity implements BottomNavigationView.OnNavigationItemSelectedListener {
 
         BottomNavigationView bottomNavigationView;
+        ImageView btnSettings;
 
 @Override
 protected void onCreate(Bundle savedInstanceState) {
@@ -24,6 +28,13 @@ protected void onCreate(Bundle savedInstanceState) {
 
         bottomNavigationView.setOnNavigationItemSelectedListener(this);
         bottomNavigationView.setSelectedItemId(R.id.video_nav_graph);
+        btnSettings=findViewById(R.id.btnsettings);
+        btnSettings.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                        startActivity(new Intent( DashboardActivity.this, SettingActivity.class));
+                }
+        });
 
         }
         VideoFragment videoFragment = new VideoFragment();

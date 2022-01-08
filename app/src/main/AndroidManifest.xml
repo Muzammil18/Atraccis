@@ -24,6 +24,14 @@
             android:exported="true"/>
         <activity android:name=".activities.DashboardActivity"
             android:exported="true"/>
+        <activity android:name=".activities.TestActivity"
+            android:exported="true"/>
+        <activity android:name=".activities.FollowUpTestActivity"
+            android:exported="true"/>
+        <activity android:name=".activities.SettingActivity"
+            android:exported="true"/>
+        <activity android:name=".activities.listOfUsers.ListOfUsersActivity"
+            android:exported="true"/>
     </application>
 
 </manifest>

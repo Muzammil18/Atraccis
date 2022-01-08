@@ -1,5 +1,7 @@
 package com.example.atraccis.fragment;
 
+import android.content.Context;
+import android.content.SharedPreferences;
 import android.net.Uri;
 import android.os.Bundle;
 import android.util.Log;
@@ -13,6 +15,7 @@ import androidx.fragment.app.Fragment;
 
 import com.example.atraccis.R;
 import com.example.atraccis.databinding.FragmentSongBinding;
+import com.example.atraccis.helpers.Links;
 import com.google.android.exoplayer2.ExoPlayerFactory;
 import com.google.android.exoplayer2.SimpleExoPlayer;
 import com.google.android.exoplayer2.extractor.DefaultExtractorsFactory;
@@ -28,11 +31,18 @@ import com.google.android.exoplayer2.upstream.DefaultHttpDataSourceFactory;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
+import java.text.SimpleDateFormat;
+import java.util.Date;
+import java.util.HashMap;
+
 
 public class SongFragment extends Fragment {
     public FragmentSongBinding binding;
     private View mView;
+    Links links;
     FirebaseDatabase firebaseDatabase;
+    SharedPreferences sharedpreferences;
+
 
     // creating a variable for our Database
     // Reference for Firebase.
@@ -61,16 +71,24 @@ public class SongFragment extends Fragment {
 
     public void onViewCreated( View view,  Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
+        sharedpreferences = requireContext().getSharedPreferences(getString(R.string.app_name), Context.MODE_PRIVATE);
         this.init();
     }
 
 
     private final void init() {
         firebaseDatabase = FirebaseDatabase.getInstance();
+        links=new Links();
+        if(sharedpreferences.getBoolean("insertsong",false)){
+            insertSong();
+            SharedPreferences.Editor editor = sharedpreferences.edit();
+            editor.putBoolean("insertsong",false);
+            editor.commit();
 
+        }
         // below line is used to get reference for our database.
         databaseReference = firebaseDatabase.getReference("url");
-        initializeExoplayerView("https://firebasestorage.googleapis.com/v0/b/atraccis-d69de.appspot.com/o/songs%2Fsong1.mp4?alt=media&token=57a6038f-d50f-4d0c-b7a2-a38c29e926dc");
+        initializeExoplayerView(links.getSongs(sharedpreferences.getInt("counter",0)));
     }
 
     private void initializeExoplayerView(String videoURL) {
@@ -114,5 +132,14 @@ public class SongFragment extends Fragment {
             // below line is used for handling our errors.
             Log.e("TAG", "Error : " + e.toString());
         }
+    }
+    void insertSong(){
+        SimpleDateFormat sdf = new SimpleDateFormat("yyyy.MM.dd G 'at' HH:mm:ss z");
+        HashMap<String, Object> map = new HashMap<>();
+        map.put("email",sharedpreferences.getString("email",""));
+        map.put("playSong","Played");
+        map.put("date",sdf.format(new Date()));
+        FirebaseDatabase.getInstance().getReference().child("Song_Data").push()
+                .setValue(map);
     }
 }

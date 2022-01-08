@@ -1,6 +1,7 @@
 <resources>
     <string name="app_name">Atraccis</string>
     <string name="string_log_in" translatable="false">Log In</string>
+    <string name="string_submit" translatable="false">Submit</string>
     <string name="string_email" translatable="false">Enter Email</string>
     <string name="string_company" translatable="false">Select Company</string>
     <string name="string_password" translatable="false">Enter Passowrd</string>
