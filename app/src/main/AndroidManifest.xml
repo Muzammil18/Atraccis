@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.example.atraccis">
+    package="com.example.atracc">
     <!--Permissions for internet-->
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
@@ -12,7 +12,7 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Atraccis">
         <activity
-            android:name=".activities.SplashActivity"
+            android:name="com.example.atracc.activities.SplashActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -20,17 +20,21 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".activities.LoginActivity"
+        <activity android:name="com.example.atracc.activities.LoginActivity"
             android:exported="true"/>
-        <activity android:name=".activities.DashboardActivity"
+        <activity android:name="com.example.atracc.activities.DashboardActivity"
             android:exported="true"/>
-        <activity android:name=".activities.TestActivity"
+        <activity android:name="com.example.atracc.activities.TestActivity"
             android:exported="true"/>
-        <activity android:name=".activities.FollowUpTestActivity"
+        <activity android:name="com.example.atracc.activities.FollowUpTestActivity"
             android:exported="true"/>
-        <activity android:name=".activities.SettingActivity"
+        <activity android:name="com.example.atracc.activities.SettingActivity"
             android:exported="true"/>
-        <activity android:name=".activities.listOfUsers.ListOfUsersActivity"
+        <activity android:name="com.example.atracc.activities.listOfUsers.ListOfUsersActivity"
+            android:exported="true"/>
+        <activity android:name="com.example.atracc.activities.TermsActivity"
+            android:exported="true"/>
+        <activity android:name="com.example.atracc.activities.ReviewsActivity"
             android:exported="true"/>
     </application>
 

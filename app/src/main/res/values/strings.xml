@@ -2,6 +2,7 @@
     <string name="app_name">Atraccis</string>
     <string name="string_log_in" translatable="false">Log In</string>
     <string name="string_submit" translatable="false">Submit</string>
+    <string name="string_next" translatable="false">Next</string>
     <string name="string_email" translatable="false">Enter Email</string>
     <string name="string_company" translatable="false">Select Company</string>
     <string name="string_password" translatable="false">Enter Passowrd</string>
@@ -9,4 +10,48 @@
     <string name="string_video" translatable="false">Video</string>
     <string name="string_song" translatable="false">Song</string>
     <string name="string_hypnosis" translatable="false">Hypnosis</string>
+    <string name="string_terms">
+        Pasos a seguir en ATRACCIS…\n\n
+
+1- Elige tu hora para ver cada día un vídeo de 8 minutos y una canción de 2 minutos. Te sonará una alarma para recordártelo. Si no ves el video te volverá a recordar 30 minutos más tarde. Después de ver el vídeo te dejará escuchar la canción.
+ \n(Se recomienda antes de empezar tu actividad y con auriculares) (Los fines de semana sonará a la misma hora)\n\n
+
+2- Elige tu hora para escuchar un audio de hipnosis. Te sonará una alarma para recordártelo. Si no escuchas el audio te volverá a recordar 30 minutos más tarde.
+ \n(Se recomienda antes de ir a dormir)\n (Los fines de semana sonará a la misma hora)\n\n
+
+3- Realiza un pequeño test inicial para saber desde dónde partimos.
+ \n(Se recomienda sinceridad para conseguir alcanzar tus objetivos)\n\n
+
+4- ATRACCIS se compone de 10 videos, 10 canciones y un audio de hipnosis.
+\n(Sólo podéis reproducir un video y canción por día, tantas veces como queráis)\n\n
+
+5- Tienes un link de acceso para leer en digital o comprar el libro “Por si nunca nos volvemos a ver”. \n(El libro dispone de información más extendida de ATRACCIS, Las personas que incluyen este proceso de lectura obtienen innumerables beneficios, agudizan su astucia, estimulan su percepción, concentración y empatía.)
+ \nhttps://www.autoreseditores.com/atraccis\n\n
+
+6- ATRACCIS tiene dos fases, la primera de 30 días para ayudaros a crear nuevos hábitos que os acerquen a lo que queréis conseguir y la segunda fase son 60 días más para conseguir crear un estilo de vida.\n\n
+7- A los 30, 60 y 90 días aparecerá un test de seguimiento para conocer tu evolución.\n\n
+
+8 - Pasado los 90 días, no tendrás acceso al programa ATRACCIS\n\n
+
+    </string>
+    <string name="string_review">
+        Enhorabuena por haber finalizado la 1º fase de ATRACCIS.\n\n
+
+Su equipo ha conseguido en 30 días crear buenos hábitos para sentirse mejor y estar más cerca de alcanzar objetivos.\n\n
+
+La regla de oro 21/90 es que se requieren 21 días para crear un hábito y 90 días para transformar ese hábito en un estilo de vida, por ello se ha de repetir el programa de ATRACCIS por 60 días más y así poder vivir una vida sin límites en lo personal y lo profesional.\n\n
+
+ATRACCIS equivale a 30 horas de terapia. Una persona que necesite hacer de forma privada este tipo de terapia le supondría un coste mínimo de 1.500€\n\n
+
+Si una empresa de 50 trabajadores requiere 30 horas de terapia para cada trabajador, esto supondría a la empresa un coste de 75.000€.\n\n
+
+ATRACCIS ofrece esas 30 horas de terapia por un importe único de 2.760€ independientemente del número de trabajadores que reciban el programa.\n\n
+
+Para empresas de 50 trabajadores, el coste por persona seria de 0,92€ x día con un total de 55,2€ por trabajador. \n\n
+
+Es importante tomar acción si realmente quiere conseguir que su empresa se convierta en una organización más productiva y competitiva con personas más competentes, profesionales y enfocados.\n\n
+
+Puede acceder fácilmente a la 2° fase de ATRACCIS abonando el importe desde el código QR que ve a continuación.\n\n
+
+    </string>
 </resources>

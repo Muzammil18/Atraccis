@@ -1,33 +1,42 @@
 {
   "project_info": {
-    "project_number": "293803732893",
-    "project_id": "atraccis-d69de",
-    "storage_bucket": "atraccis-d69de.appspot.com"
+    "project_number": "326907085450",
+    "firebase_url": "https://atraccis-96ae9-default-rtdb.firebaseio.com",
+    "project_id": "atraccis-96ae9",
+    "storage_bucket": "atraccis-96ae9.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:293803732893:android:1dd594b8d04ab52beec974",
+        "mobilesdk_app_id": "1:326907085450:android:2a48d3cb853d644b846373",
         "android_client_info": {
-          "package_name": "com.example.atraccis"
+          "package_name": "com.example.atracc"
         }
       },
       "oauth_client": [
         {
-          "client_id": "293803732893-ues4l53if7ukuptuqkumge8f0etmh3vg.apps.googleusercontent.com",
+          "client_id": "326907085450-pspfd8m8viqqg39u0ica94gm510ek4s4.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.atracc",
+            "certificate_hash": "609b7edd9d3b49de1a9ce4d61183ffd3e81249a6"
+          }
+        },
+        {
+          "client_id": "326907085450-mbqhi9mkagdeishcqift65hakmk4il8u.apps.googleusercontent.com",
           "client_type": 3
         }
       ],
       "api_key": [
         {
-          "current_key": "AIzaSyCpaVlHXvq8x23LkAURSfVNRwNEh_ODedk"
+          "current_key": "AIzaSyBZmIL6FRMy78YB_a4JNalm5xfNb2v8liw"
         }
       ],
       "services": {
         "appinvite_service": {
           "other_platform_oauth_client": [
             {
-              "client_id": "293803732893-ues4l53if7ukuptuqkumge8f0etmh3vg.apps.googleusercontent.com",
+              "client_id": "326907085450-mbqhi9mkagdeishcqift65hakmk4il8u.apps.googleusercontent.com",
               "client_type": 3
             }
           ]
