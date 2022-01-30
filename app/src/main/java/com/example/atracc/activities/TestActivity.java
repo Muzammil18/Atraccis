@@ -9,18 +9,17 @@ import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
+import com.example.atracc.R;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import com.example.atracc.R;
 import com.google.firebase.database.FirebaseDatabase;
 
 import java.util.HashMap;
 
 public class TestActivity extends AppCompatActivity {
     SharedPreferences sharedpreferences;
-    TextView testName,question1,question2,question3,question4,question5,question6,question7,btnSubmit;
-    EditText question7Ans7;
+    TextView testName,question1,question2,question3,question4,question5,question6,btnSubmit;
     CheckBox question1Ans1,question1Ans2,
             question2Ans1,question2Ans2,question2Ans3,question2Ans4,question2Ans5,
             question3Ans1,question3Ans2,question3Ans3,question3Ans4,question3Ans5,
@@ -51,7 +50,6 @@ public class TestActivity extends AppCompatActivity {
         question4=findViewById(R.id.question4);
         question5=findViewById(R.id.question5);
         question6=findViewById(R.id.question6);
-        question7=findViewById(R.id.question7);
         question1Ans1=findViewById(R.id.question1checkBox1);
         question1Ans2=findViewById(R.id.question1checkBox2);
         question2Ans1=findViewById(R.id.question2checkBox1);
@@ -90,14 +88,13 @@ public class TestActivity extends AppCompatActivity {
         question6Ans8=findViewById(R.id.question6checkBox8);
         question6Ans9=findViewById(R.id.question6checkBox9);
         question6Ans10=findViewById(R.id.question6checkBox10);
-        question7Ans7=findViewById(R.id.question7ans);
         btnSubmit=findViewById(R.id.btnsubmit);
     }
     private void onClickListener() {
         btnSubmit.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if(validation()) {
+//                if(validation()) {
                     insertInetialTestDetail();
                     SharedPreferences.Editor editor = sharedpreferences.edit();
                     editor.putBoolean("InitialTest", true);
@@ -105,7 +102,7 @@ public class TestActivity extends AppCompatActivity {
                     Intent intent=new Intent(TestActivity.this,DashboardActivity.class);
                     finish();
                     startActivity(intent);
-                }
+//                }
 
 
             }
@@ -137,10 +134,6 @@ public class TestActivity extends AppCompatActivity {
             Toast.makeText(this, "Please Select at lest one answer from question 6", Toast.LENGTH_SHORT).show();
         return false;
         }
-       if(question7Ans7.getText().toString().isEmpty()){
-           Toast.makeText(this, "Please write answer of question 7", Toast.LENGTH_SHORT).show();
-           return false;
-       }
         return true;
     }
     private void getAnswers(){
@@ -278,8 +271,6 @@ public class TestActivity extends AppCompatActivity {
         map.put("Answer5",strQuestion5Ans1+" "+strQuestion5Ans2+" "+strQuestion5Ans3+" "+strQuestion5Ans4+" "+strQuestion5Ans5+" "+strQuestion5Ans6+" "+strQuestion5Ans7+" "+strQuestion5Ans8+" "+strQuestion5Ans9);
         map.put("Question6",question6.getText().toString());
         map.put("Answer6",strQuestion6Ans1+" "+strQuestion6Ans2+" "+strQuestion6Ans3+" "+strQuestion6Ans4+" "+strQuestion6Ans5+" "+strQuestion6Ans6+" "+strQuestion6Ans7+" "+strQuestion6Ans8+" "+strQuestion6Ans9+" "+strQuestion6Ans10);
-        map.put("Question7",question7.getText().toString());
-        map.put("Answer7",question7Ans7.getText().toString());
         FirebaseDatabase.getInstance().getReference().child("Initial_Test").push()
                 .setValue(map);
     }

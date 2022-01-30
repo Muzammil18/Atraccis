@@ -4,36 +4,35 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <TextView
-        android:id="@+id/txtalarm"
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar5"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="30dp"
-        android:background="@drawable/border_shadow"
-        android:drawableEnd="@drawable/ic_baseline_navigate_next_24"
-        android:padding="@dimen/_15sdp"
-        android:text="Alarms"
-        android:textColor="@color/primery"
-        android:textSize="@dimen/_20sdp"
+        android:background="?attr/colorPrimary"
+        android:minHeight="?attr/actionBarSize"
+        android:theme="?attr/actionBarTheme"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <TextView
-        android:id="@+id/txtanalysis"
+    <ScrollView
+        android:id="@+id/addAlarmScrollView"
         android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
-        android:background="@drawable/border_shadow"
-        android:drawableEnd="@drawable/ic_baseline_navigate_next_24"
-        android:padding="@dimen/_15sdp"
-        android:text="Analysis"
-        android:textColor="@color/primery"
-        android:textSize="@dimen/_20sdp"
+        android:layout_height="0dp"
+        android:layout_marginStart="0sp"
+        android:layout_marginTop="1dp"
+        android:layout_marginEnd="0sp"
+        android:fitsSystemWindows="false"
+        android:scrollbars="vertical"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/txtalarm" />
+        app:layout_constraintTop_toBottomOf="@id/toolbar5"
+        app:layout_constraintVertical_bias="0.0">
+
+        <include layout="@layout/activity_settings_scrollview" />
+
+    </ScrollView>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -10,6 +10,8 @@ import android.widget.TextView;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.atracc.R;
+import com.example.atracc.activities.listOfUsers.ListOfUsersActivity;
+import com.example.atracc.alarms.Activity_AlarmsList;
 
 public class SettingActivity extends AppCompatActivity  {
         SharedPreferences sharedpreferences;
@@ -17,7 +19,7 @@ public class SettingActivity extends AppCompatActivity  {
 @Override
 protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_settings);
+        setContentView(R.layout.activity_setting);
         find_View_By_Id();
 
 
@@ -34,9 +36,20 @@ protected void onCreate(Bundle savedInstanceState) {
                 txtAnalysis.setOnClickListener(new View.OnClickListener() {
                         @Override
                         public void onClick(View v) {
-                                startActivity(new Intent(SettingActivity.this, ReviewsActivity.class));
+                                if(sharedpreferences.getLong("dateDiffrence",0)==30||sharedpreferences.getLong("dateDiffrence",0)==60||sharedpreferences.getLong("dateDiffrence",0)==90){
+                                startActivity(new Intent(SettingActivity.this, ReviewsActivity.class));}
+                                else {
+                                        startActivity(new Intent(SettingActivity.this,  ListOfUsersActivity.class));
+                                }
                         }
                 });
+                txtAlaram.setOnClickListener(new View.OnClickListener() {
+                        @Override
+                        public void onClick(View v) {
+                                startActivity(new Intent(SettingActivity.this, Activity_AlarmsList.class));
+                        }
+                });
+
 
         }
 

@@ -33,7 +33,7 @@ public class ListOfUsersAdapter extends RecyclerView.Adapter<ListOfUsersAdapter.
         holder.textView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Toast.makeText(view.getContext(),"click on item ",Toast.LENGTH_LONG).show();
+//                Toast.makeText(view.getContext(),"click on item ",Toast.LENGTH_LONG).show();
             }
         });
     }

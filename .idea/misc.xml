@@ -5,12 +5,20 @@
       <map>
         <entry key="..\:/Mobile Application/Android/Java/Mehmood Work/Atraccis1/app/src/main/res/drawable-v24/bg_dialogue_progress.xml" value="0.1843718079673136" />
         <entry key="..\:/Mobile Application/Android/Java/Mehmood Work/Atraccis1/app/src/main/res/drawable-v24/bg_nav.xml" value="0.1648148148148148" />
+        <entry key="..\:/Mobile Application/Android/Java/Mehmood Work/Atraccis1/app/src/main/res/drawable/button_border.xml" value="0.18802083333333333" />
+        <entry key="..\:/Mobile Application/Android/Java/Mehmood Work/Atraccis1/app/src/main/res/drawable/card_view_border.xml" value="0.1" />
+        <entry key="..\:/Mobile Application/Android/Java/Mehmood Work/Atraccis1/app/src/main/res/drawable/ic_add.xml" value="0.1" />
+        <entry key="..\:/Mobile Application/Android/Java/Mehmood Work/Atraccis1/app/src/main/res/drawable/ic_alarm_on.xml" value="0.18802083333333333" />
+        <entry key="..\:/Mobile Application/Android/Java/Mehmood Work/Atraccis1/app/src/main/res/drawable/ic_unhappy.xml" value="0.1" />
+        <entry key="..\:/Mobile Application/Android/Java/Mehmood Work/Atraccis1/app/src/main/res/layout/activity_alarmslist.xml" value="0.1" />
         <entry key="..\:/Mobile Application/Android/Java/Mehmood Work/Atraccis1/app/src/main/res/layout/activity_dashboard.xml" value="0.13858695652173914" />
         <entry key="..\:/Mobile Application/Android/Java/Mehmood Work/Atraccis1/app/src/main/res/layout/activity_follow_up_test.xml" value="0.16770833333333332" />
         <entry key="..\:/Mobile Application/Android/Java/Mehmood Work/Atraccis1/app/src/main/res/layout/activity_list_of_users.xml" value="0.16770833333333332" />
         <entry key="..\:/Mobile Application/Android/Java/Mehmood Work/Atraccis1/app/src/main/res/layout/activity_login.xml" value="0.12001811594202899" />
         <entry key="..\:/Mobile Application/Android/Java/Mehmood Work/Atraccis1/app/src/main/res/layout/activity_reviews.xml" value="0.12817028985507245" />
         <entry key="..\:/Mobile Application/Android/Java/Mehmood Work/Atraccis1/app/src/main/res/layout/activity_settings.xml" value="0.16770833333333332" />
+        <entry key="..\:/Mobile Application/Android/Java/Mehmood Work/Atraccis1/app/src/main/res/layout/activity_settings_expand_shakeoptions.xml" value="0.1598731884057971" />
+        <entry key="..\:/Mobile Application/Android/Java/Mehmood Work/Atraccis1/app/src/main/res/layout/activity_splash.xml" value="0.16770833333333332" />
         <entry key="..\:/Mobile Application/Android/Java/Mehmood Work/Atraccis1/app/src/main/res/layout/activity_terms.xml" value="0.3333333333333333" />
         <entry key="..\:/Mobile Application/Android/Java/Mehmood Work/Atraccis1/app/src/main/res/layout/activity_test.xml" value="0.16770833333333332" />
         <entry key="..\:/Mobile Application/Android/Java/Mehmood Work/Atraccis1/app/src/main/res/layout/activity_user_details.xml" value="0.16394927536231885" />
@@ -18,9 +26,13 @@
         <entry key="..\:/Mobile Application/Android/Java/Mehmood Work/Atraccis1/app/src/main/res/layout/fragment_hypnosis.xml" value="0.1105072463768116" />
         <entry key="..\:/Mobile Application/Android/Java/Mehmood Work/Atraccis1/app/src/main/res/layout/fragment_song.xml" value="0.1105072463768116" />
         <entry key="..\:/Mobile Application/Android/Java/Mehmood Work/Atraccis1/app/src/main/res/layout/fragment_video.xml" value="0.15534420289855072" />
+        <entry key="..\:/Mobile Application/Android/Java/Mehmood Work/Atraccis1/app/src/main/res/layout/item_list_of_plays.xml" value="0.16770833333333332" />
+        <entry key="..\:/Mobile Application/Android/Java/Mehmood Work/Atraccis1/app/src/main/res/layout/item_list_of_tests.xml" value="0.16770833333333332" />
         <entry key="..\:/Mobile Application/Android/Java/Mehmood Work/Atraccis1/app/src/main/res/layout/item_list_of_users.xml" value="0.16770833333333332" />
         <entry key="..\:/Mobile Application/Android/Java/Mehmood Work/Atraccis1/app/src/main/res/layout/item_select_company_spinner.xml" value="0.16770833333333332" />
         <entry key="..\:/Mobile Application/Android/Java/Mehmood Work/Atraccis1/app/src/main/res/layout/itemview.xml" value="0.16666666666666666" />
+        <entry key="..\:/Mobile Application/Android/Java/Mehmood Work/Atraccis1/app/src/main/res/layout/recyclerviewrow_alarmslist.xml" value="0.15172101449275363" />
+        <entry key="..\:/Mobile Application/Android/Java/Mehmood Work/Atraccis1/app/src/main/res/layout/stub_alarmslist_empty.xml" value="0.1598731884057971" />
         <entry key="..\:/Mobile Application/Android/Java/Mehmood Work/Atraccis1/app/src/main/res/menu/menu_bottom_navigation.xml" value="0.16770833333333332" />
       </map>
     </option>

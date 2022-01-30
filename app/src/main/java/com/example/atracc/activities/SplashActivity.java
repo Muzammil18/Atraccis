@@ -7,6 +7,7 @@ import android.os.Build;
 import android.os.Bundle;
 import android.os.Handler;
 import android.util.Log;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -33,7 +34,9 @@ public class SplashActivity extends AppCompatActivity {
     @Override
     protected void onResume() {
         super.onResume();
-          }
+
+
+    }
     //Override onCreate method.
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -60,6 +63,9 @@ public class SplashActivity extends AppCompatActivity {
                         else if(!sharedpreferences.getBoolean("InitialTest",false)){
                             intent= new Intent(SplashActivity.this,
                                     TestActivity.class);
+                        } else if(!sharedpreferences.getBoolean("FollowTest",false)&&(sharedpreferences.getLong("dateDiffrence",0)==30||sharedpreferences.getLong("dateDiffrence",0)==60||sharedpreferences.getLong("dateDiffrence",0)==90)){
+                            intent= new Intent(SplashActivity.this,
+                                    FollowUpTestActivity.class);
                         }
                         else{
                             intent= new Intent(SplashActivity.this,

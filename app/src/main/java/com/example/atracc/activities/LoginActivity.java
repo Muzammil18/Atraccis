@@ -4,6 +4,7 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.CheckBox;
@@ -136,9 +137,11 @@ public class LoginActivity extends AppCompatActivity {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
                 counterForIncharge = (int) snapshot.getChildrenCount();
-                    if (counterForIncharge == 1) {
+                Log.e("Password",snapshot.getChildrenCount()+"");
+
+                if (counterForIncharge == 1) {
                         for (DataSnapshot npsnapshot : snapshot.getChildren()){
-                            password[0] =npsnapshot.child("password").getValue(String.class);
+                            password[0] =npsnapshot.child("password").getValue(String.class).toString();
                         }
                         if(password[0].equals(userPassword.getText().toString())){
                             SharedPreferences.Editor editor = sharedpreferences.edit();

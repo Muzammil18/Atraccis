@@ -133,5 +133,11 @@ public class HypnosisFragment extends Fragment {
         FirebaseDatabase.getInstance().getReference().child("Hyponsis_Data").push()
                 .setValue(map);
     }
+
+    @Override
+    public void onPause() {
+        super.onPause();
+        exoPlayer.stop();
+    }
 }
 

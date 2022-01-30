@@ -143,5 +143,10 @@ public class VideoFragment extends Fragment {
         FirebaseDatabase.getInstance().getReference().child("Videos_Data").push()
                 .setValue(map);
     }
+    @Override
+    public void onPause() {
+        super.onPause();
+        exoPlayer.stop();
+    }
 }
 

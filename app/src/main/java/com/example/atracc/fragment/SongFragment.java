@@ -137,4 +137,9 @@ public class SongFragment extends Fragment {
         FirebaseDatabase.getInstance().getReference().child("Song_Data").push()
                 .setValue(map);
     }
+    @Override
+    public void onPause() {
+        super.onPause();
+        exoPlayer.stop();
+    }
 }
